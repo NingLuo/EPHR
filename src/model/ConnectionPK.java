@@ -1,6 +1,8 @@
 package model;
 
-public class ConnectionPK {
+import java.io.Serializable;
+
+public class ConnectionPK implements Serializable{
 	private Integer patient;
 	private Integer provider;
 }
