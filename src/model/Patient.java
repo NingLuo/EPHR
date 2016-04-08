@@ -19,7 +19,7 @@ public class Patient extends User{
 //	@Column(name="patientId", nullable=false, unique=true)
 //	private String patientId;
 	
-	@Column(name="patient_name", nullable=false)
+	@Column(name="patient_name")
 	private String patientName;
 	
 	@Temporal(TemporalType.DATE)
