@@ -2,31 +2,31 @@
 <form>
 	<div class="form-group">
 		<label for="patientName">Patient Name</label>
-		<input class="form-control" type="text" id="patientName">
+		<input ng-model="model.user.patientName" class="form-control" type="text" id="patientName">
 	</div>
 	<div class="form-group">
 		<label for="dob">Date of Birth</label>
-		<input class="form-control" type="date" id="dob">
+		<input ng-model="model.user.dob" class="form-control" type="date" id="dob">
 	</div>
 	<div class="form-group">
 		<label for="gender">Gender</label>
-		<input class="form-control" type="text" id="gender">
+		<input ng-model="model.user.gender" class="form-control" type="text" id="gender">
 	</div>
 	<div class="form-group">
 		<label for="ethnicity">Ethnicity</label>
-		<input class="form-control" type="text" id="ethnicity">
+		<input ng-model="model.user.ethnicity" class="form-control" type="text" id="ethnicity">
 	</div>
 	<div class="form-group">
 		<label for="address">Address</label>
-		<input class="form-control" type="text" id="address">
+		<input ng-model="model.user.address" class="form-control" type="text" id="address">
 	</div>
 	<div class="form-group">
 		<label for="healthPlan">Health Plan</label>
-		<input class="form-control" type="text" id="healthPlan">
+		<input ng-model="model.user.healthPlan" class="form-control" type="text" id="healthPlan">
 	</div>
 	<div class="form-group">
 		<label for="language">Language</label>
-		<input class="form-control" type="text" id="language">
+		<input ng-model="model.user.language" class="form-control" type="text" id="language">
 	</div>
-	<button class="btn btn-success btn-block">Update</button>
+	<button ng-click="model.update()" class="btn btn-success btn-block">Update</button>
 </form>

@@ -24,4 +24,13 @@ public class UserDAO {
 		em.getTransaction().commit();
 		return user;
 	}
+	
+	public User findUserById(Integer userId) {
+		em.getTransaction().begin();
+		Query query = em.createQuery("select u from User u where u.id=:userId");
+		query.setParameter("userId", userId);
+		User user = (User)query.getSingleResult();
+		em.getTransaction().commit();
+		return user;
+	}
 }

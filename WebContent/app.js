@@ -17,7 +17,9 @@
 				controllerAs: "model"
 			})
 			.when("/profile", {
-				templateUrl:"views/profile/profile.view.html"
+				templateUrl:"views/profile/profile.view.html",
+				controller:"ProfileCtrl",
+				controllerAs: "model"
 			})
 			.when("/clinicalSummaries", {
 				templateUrl:"views/summary/clinicalSummaries.view.html"

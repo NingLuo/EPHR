@@ -21,11 +21,10 @@ public class PatientDAO {
 		em.getTransaction().commit();
 	}
 
-	public static void main(String[] args) {
-//		Patient p = new Patient("bob", "bobbob","Bob Dillon", "", "", null, "", "", "");
-//		System.out.println(p);
-//		PatientDAO dao = new PatientDAO();
-//		dao.createPatient(p);
+	public void updatePatient(Patient p) {
+		em.getTransaction().begin();
+		em.merge(p);
+		em.getTransaction().commit();
 	}
 
 }
