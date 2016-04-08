@@ -5,7 +5,7 @@
 		.module("EPHR")
 		.controller("RegisterCtrl", RegisterCtrl);
 	
-	function RegisterCtrl($http) {
+	function RegisterCtrl($http, $location) {
 		var vm = this;
 		vm.register = register;
 		
@@ -15,6 +15,7 @@
 				.then(
 						function(response) {
 							console.log(response.data);
+							$location.url("/profile");
 						},
 						function(err) {
 							console.log(err);

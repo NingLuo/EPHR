@@ -3,6 +3,7 @@ package dao;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 
 import model.User;
 
@@ -14,9 +15,13 @@ public class UserDAO {
 		em = factory.createEntityManager();
 	}
 	
-	public void createUser(User user) {
+	public User findUserByCredentials(String username, String password) {
 		em.getTransaction().begin();
-		em.persist(user);
+		Query query = em.createQuery("select u from User u where u.username=:username and u.password=:password", User.class);
+		query.setParameter("username", username);
+		query.setParameter("password", password);
+		User user = (User)query.getSingleResult();
 		em.getTransaction().commit();
+		return user;
 	}
 }
