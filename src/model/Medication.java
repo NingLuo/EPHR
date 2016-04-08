@@ -1,7 +1,6 @@
 package model;
 
 import java.util.Date;
-
 import javax.persistence.*;
 
 @Entity
@@ -9,15 +8,17 @@ import javax.persistence.*;
 public class Medication {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private String medId;
+	private Integer medId;
 	
 	@Column(name="medName", nullable=false)
 	private String medName;
 	
+	@Column(length=1024)
 	private String instruction;
 	
 	@Temporal(TemporalType.DATE)
 	private Date prescirbedDate;
+	
 	private Integer refills;
 	private String pharmacy;
 	private Integer quantity;
@@ -35,7 +36,7 @@ public class Medication {
 		super();
 	}
 	
-	public Medication(String medId, String medName, String instruction, Date prescirbedDate, Integer refills,
+	public Medication(Integer medId, String medName, String instruction, Date prescirbedDate, Integer refills,
 			String pharmacy, Integer quantity, Patient patient, Provider provider) {
 		super();
 		this.medId = medId;
@@ -51,11 +52,11 @@ public class Medication {
 
 
 
-	public String getMedId() {
+	public Integer getMedId() {
 		return medId;
 	}
 
-	public void setMedId(String medId) {
+	public void setMedId(Integer medId) {
 		this.medId = medId;
 	}
 

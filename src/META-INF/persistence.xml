@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
-	<persistence-unit name="EPHR">
+	<persistence-unit name="EPHR" transaction-type="RESOURCE_LOCAL">
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<!-- <jar-file>lib/mysql-connector-java-5.1.38-bin.jar</jar-file> -->
 		<class>model.BloodTest</class>
 		<class>model.ClinicalSummary</class>
 		<class>model.Connection</class>
@@ -12,12 +13,16 @@
 		<class>model.TestResult</class>
 		<class>model.User</class>
 		<properties>
-			<property name="eclipselink.jdbc.password" value="admin" />
-			<property name="eclipselink.jdbc.user" value="root" />
+			<property name="eclipselink.jdbc.password" value="Demoncag1." />
+			<property name="eclipselink.jdbc.user" value="cage" />
 			<property name="eclipselink.jdbc.driver" value="com.mysql.jdbc.Driver" />
-			<property name="eclipselink.jdbc.url" value="jdbc:mysql://localhost:3306/ephr" />
+			<property name="eclipselink.jdbc.url" value="jdbc:mysql://localhost:3306/EPHR" />
 			<!-- <property name="eclipselink.ddl-generation" value="drop-and-create-tables" /> -->
 			<property name="eclipselink.logging.level" value="INFO" />
+			<!-- <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+			<property name="javax.persistence.jdbc.user" value="cage"/>
+			<property name="javax.persistence.jdbc.password" value="Demoncag1."/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/EPHR"/>  -->
 		</properties>
 	</persistence-unit>
 </persistence>

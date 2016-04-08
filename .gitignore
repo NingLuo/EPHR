@@ -3,6 +3,7 @@
 *.war
 *.ear
 *.class
+Hello.jsp
 
 # eclipse specific git ignore
 *.pydevproject
