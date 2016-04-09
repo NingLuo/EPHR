@@ -8,13 +8,15 @@
 	function ClinicalSummariesCtrl($http, $rootScope, $location) {
 		var vm = this;
 		var userId= $rootScope.currentUser.id;
+		vm.summaries;
 		
 		function init()	{
 			$http
 				.get("http://localhost:8080/EPHR/rest/patient/" + userId + "/clinicalSummaries")
 				.then(
 					function(response) {
-						console.log(response.data);
+						vm.summaries = response.data;
+						console.log(vm.summaries);
 					},
 					function(err) {
 						console.log(err);

@@ -5,7 +5,7 @@
 		.module("EPHR")
 		.controller("RegisterCtrl", RegisterCtrl);
 	
-	function RegisterCtrl($http, $location) {
+	function RegisterCtrl($http, $location, $rootScope) {
 		var vm = this;
 		vm.register = register;
 		
@@ -14,7 +14,7 @@
 				.post("http://localhost:8080/EPHR/rest/patient", user)
 				.then(
 						function(response) {
-							console.log(response.data);
+							$rootScope = response.data;
 							$location.url("/profile");
 						},
 						function(err) {
