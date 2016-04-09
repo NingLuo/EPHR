@@ -27,10 +27,12 @@
 				controllerAs: "model"
 			})
 			.when("/summary", {
-				templateUrl:"views/summary/summary.view.html"
+				templateUrl:"views/summary/summaryDetail.view.html"
 			})
-			.when("/test", {
-				templateUrl:"views/testResult/testResult.view.html"
+			.when("/testResult", {
+				templateUrl:"views/testResult/testResult.view.html",
+				controller:"TestResultCtrl",
+				controllerAs: "model"
 			})
 			.when("/bloodTest", {
 				templateUrl:"views/testResult/bloodTest.view.html"

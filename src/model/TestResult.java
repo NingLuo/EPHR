@@ -4,6 +4,8 @@ import java.util.Date;
 
 import javax.persistence.*;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
+
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @Table(name="Test_Result")
@@ -22,6 +24,7 @@ public class TestResult {
 	
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="patientId")
+	@JsonIgnore 
 	private Patient patient;
 	
 	public TestResult() {

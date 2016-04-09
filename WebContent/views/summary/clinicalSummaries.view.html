@@ -5,13 +5,17 @@
 			<th>Chief Complaint</th>
 			<th>Summary Date</th>
 			<th>Care Team</th>
+			<th>&nbsp</th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr ng-repeat="summary in model.summaries">
-			<td><a href="#/summary">{{summary.chiefComplaint}}</a></td>
+			<td>{{summary.chiefComplaint}}</td>
 			<td>{{summary.summaryDate | date}}</td>
 			<td>{{summary.careTeam}}<td>
+			<td>
+				<button class="btn btn-info" ng-click="model.openDetail(summary)">Detail</button>
+			</td>
 		</tr>
 	</tbody>
 </table>

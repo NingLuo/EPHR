@@ -3,21 +3,21 @@
 	
 	angular
 		.module("EPHR")
-		.controller("ClinicalSummariesCtrl", ClinicalSummariesCtrl);
+		.controller("TestResultCtrl", TestResultCtrl);
 	
-	function ClinicalSummariesCtrl($http, $rootScope, $location) {
+	function TestResultCtrl($http, $rootScope, $location) {
 		var vm = this;
 		var userId= $rootScope.currentUser.id;
-		vm.summaries;
+		vm.testResults;
 		vm.openDetail = openDetail;
 		
 		function init()	{
 			$http
-				.get("http://localhost:8080/EPHR/rest/patient/" + userId + "/clinicalSummaries")
+				.get("http://localhost:8080/EPHR/rest/patient/" + userId + "/testResults")
 				.then(
 					function(response) {
-						vm.summaries = response.data;
-						console.log(vm.summaries);
+						vm.testResults = response.data;
+						console.log(vm.testResults);
 					},
 					function(err) {
 						console.log(err);

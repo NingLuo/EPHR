@@ -12,15 +12,17 @@ import javax.ws.rs.Produces;
 
 import dao.ClinicalSummaryDAO;
 import dao.PatientDAO;
+import dao.TestResultDAO;
 import model.ClinicalSummary;
 import model.Patient;
-import model.User;
+import model.TestResult;
 
 @Path("patient")
 public class PatientService {
 	
 	PatientDAO dao = new PatientDAO();
 	ClinicalSummaryDAO csdao = new ClinicalSummaryDAO();
+	TestResultDAO trdao = new TestResultDAO();
 	
 	@POST
 	@Path("/")
@@ -45,5 +47,14 @@ public class PatientService {
 	public List<ClinicalSummary> findCsByUserId(@PathParam("id") Integer userId) {
 		List<ClinicalSummary> CSs = csdao.findCsByUserId(userId);
 		return CSs;
+	}
+	
+	@GET
+	@Path("/{id}/testResults")
+	@Consumes("application/json")
+	@Produces("application/json")
+	public List<TestResult> findTestResultsByPatientId(@PathParam("id") Integer patientId) {
+		List<TestResult> testResults = trdao.findTestResultsByPatientId(patientId);
+		return testResults;
 	}
 }
