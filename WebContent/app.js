@@ -35,7 +35,9 @@
 				controllerAs: "model"
 			})
 			.when("/bloodTest", {
-				templateUrl:"views/testResult/bloodTest.view.html"
+				templateUrl:"views/testResult/bloodTest.view.html",
+				controller:"BloodTestCtrl",
+				controllerAs: "model"
 			})
 			.when("/medication", {
 				templateUrl:"views/medication/medication.view.html"

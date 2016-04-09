@@ -6,6 +6,7 @@
 			<th>Test Date</th>
 			<th>Test Status</th>
 			<th>Odered By</th>
+			<th>&nbsp</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -14,6 +15,9 @@
 			<td>{{test.testDate | date}}</td>
 			<td>{{test.testStatus}}</td>
 			<td>{{test.orderedBy}}</td>
+			<td>
+				<button ng-click="model.openDetail(test)" class="btn btn-info">Detail</button>
+			</td>
 		</tr>
 	</tbody>
 </table>
