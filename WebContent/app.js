@@ -36,6 +36,11 @@
 			.when("/medication", {
 				templateUrl:"views/medication/medication.view.html"
 			})
+			.when("/provider/:providerName",{
+				templateUrl:"views/provider/provider.view.html",
+				controller:"providerController",
+				controllerAs:"model"
+			})
 			.otherwise({
 				redirectTo: "/"
 			});
