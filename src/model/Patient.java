@@ -13,6 +13,8 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
+
 @Entity
 @Table(name="Patient")
 public class Patient extends User implements Serializable{
@@ -44,6 +46,7 @@ public class Patient extends User implements Serializable{
 	private List<ContactInfo> contactInfoList;
 	
 	@OneToMany(mappedBy="patient")
+	@JsonIgnore 
 	private List<TestResult> testResults;
 	
 	@OneToMany(mappedBy="patient")

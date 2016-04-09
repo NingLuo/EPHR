@@ -21,10 +21,13 @@ public class TestResultDAO {
 		em.getTransaction().begin();
 		Patient p = new Patient();
 		p = em.find(Patient.class, patientId);
+		System.out.println("=================================================");
+		System.out.println(p.getUsername());
+		p.getTestResults().size();
+		List<TestResult> testResults = p.getTestResults();
 		System.out.println("==============================================");
-		System.out.println(p);
-		List<TestResult> restResults = p.getTestResults();
+		System.out.println(testResults);
 		em.getTransaction().commit();
-		return restResults;
+		return testResults;
 	}
 }
