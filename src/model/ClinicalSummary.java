@@ -13,6 +13,8 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
+
 @Entity
 @Table(name="Clinical_Summary")
 public class ClinicalSummary {
@@ -41,6 +43,7 @@ public class ClinicalSummary {
 	
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="patientId")
+	@JsonIgnore     //Pay attention to THIS!!!!!!!!!!
 	private Patient patient;
 	
 	public ClinicalSummary() {

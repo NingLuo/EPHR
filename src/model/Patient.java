@@ -1,5 +1,6 @@
 package model;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
@@ -14,7 +15,7 @@ import javax.persistence.TemporalType;
 
 @Entity
 @Table(name="Patient")
-public class Patient extends User{
+public class Patient extends User implements Serializable{
 	
 //	@Column(name="patientId", nullable=false, unique=true)
 //	private String patientId;

@@ -22,7 +22,9 @@
 				controllerAs: "model"
 			})
 			.when("/clinicalSummaries", {
-				templateUrl:"views/summary/clinicalSummaries.view.html"
+				templateUrl:"views/summary/clinicalSummaries.view.html",
+				controller:"ClinicalSummariesCtrl",
+				controllerAs: "model"
 			})
 			.when("/summary", {
 				templateUrl:"views/summary/summary.view.html"
