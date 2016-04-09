@@ -2,6 +2,7 @@ package model;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -13,6 +14,8 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
+
 @Entity
 @Table(name="Clinical_Summary")
 public class ClinicalSummary {
@@ -23,6 +26,8 @@ public class ClinicalSummary {
 	@Temporal(TemporalType.DATE)
 	private Date summaryDate;
 	
+	@Column(name="chief_complaint")
+	private String chiefComplaint;
 	private String bloodPressure;
 	private String height;
 	private String weight;
@@ -41,18 +46,20 @@ public class ClinicalSummary {
 	
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="patientId")
+	@JsonIgnore     //Pay attention to THIS!!!!!!!!!!
 	private Patient patient;
 	
 	public ClinicalSummary() {
 		super();
 	}
 
-	public ClinicalSummary(Integer id, Date summaryDate, String bloodPressure, String height, String weight,
-			String pulse, Integer bmi, String instruction, String referral, String careTeam, Date startTime,
-			Date endTime, String tabaccoHistory, Patient patient) {
+	public ClinicalSummary(Integer id, Date summaryDate, String chiefComplaint, String bloodPressure, String height,
+			String weight, String pulse, Integer bmi, String instruction, String referral, String careTeam,
+			Date startTime, Date endTime, String tabaccoHistory, Patient patient) {
 		super();
 		this.id = id;
 		this.summaryDate = summaryDate;
+		this.chiefComplaint = chiefComplaint;
 		this.bloodPressure = bloodPressure;
 		this.height = height;
 		this.weight = weight;
@@ -81,6 +88,16 @@ public class ClinicalSummary {
 
 	public void setSummaryDate(Date summaryDate) {
 		this.summaryDate = summaryDate;
+	}
+	
+	
+
+	public String getChiefComplaint() {
+		return chiefComplaint;
+	}
+
+	public void setChiefComplaint(String chiefComplaint) {
+		this.chiefComplaint = chiefComplaint;
 	}
 
 	public String getBloodPressure() {

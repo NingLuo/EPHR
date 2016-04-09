@@ -1,5 +1,7 @@
 package com.services;
 
+import java.util.List;
+
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -8,8 +10,10 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 
+import model.ClinicalSummary;
 import model.Patient;
 import model.User;
+import dao.ClinicalSummaryDAO;
 import dao.UserDAO;
 
 @Path("user")

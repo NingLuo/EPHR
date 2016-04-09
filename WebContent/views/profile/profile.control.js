@@ -30,7 +30,7 @@
 			.put("http://localhost:8080/EPHR/rest/patient/" + userId, vm.user)
 			.then(
 				function(response) {
-					console.log(response.data);
+					console.log("Update Success");
 				},
 				function(err) {
 					console.log(err);
