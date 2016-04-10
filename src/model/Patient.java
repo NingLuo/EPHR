@@ -43,6 +43,7 @@ public class Patient extends User implements Serializable{
 	private List<ClinicalSummary> clinicalSummaries;
 	
 	@OneToMany(mappedBy="patient")
+	@JsonIgnore 
 	private List<ContactInfo> contactInfoList;
 	
 	@OneToMany(mappedBy="patient")

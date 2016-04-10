@@ -10,6 +10,7 @@
 		var vm = this;
 		var userId = $rootScope.currentUser.id;
 		vm.currentUser;
+		vm.contactInfoList;
 		
 		function init() {
 			$http
@@ -17,6 +18,16 @@
 			.then(
 					function(response) {
 						vm.currentUser = response.data;
+						return $http.get("http://localhost:8080/EPHR/rest/patient/" + userId + "/contactInfoList");
+					},
+					function(err) {
+						console.log(err);
+					}
+			)
+			.then(
+					function(response) {
+						console.log(response.data);
+						vm.contactInfoList = response.data;
 					},
 					function(err) {
 						console.log(err);
