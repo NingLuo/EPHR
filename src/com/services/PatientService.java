@@ -11,9 +11,13 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
 import dao.ClinicalSummaryDAO;
+import dao.ContactInfoDAO;
+import dao.MedicationDAO;
 import dao.PatientDAO;
 import dao.TestResultDAO;
 import model.ClinicalSummary;
+import model.ContactInfo;
+import model.Medication;
 import model.Patient;
 import model.TestResult;
 
@@ -23,6 +27,8 @@ public class PatientService {
 	PatientDAO dao = new PatientDAO();
 	ClinicalSummaryDAO csdao = new ClinicalSummaryDAO();
 	TestResultDAO trdao = new TestResultDAO();
+	MedicationDAO meddao = new MedicationDAO();
+	ContactInfoDAO contactInfoDao = new ContactInfoDAO();
 	
 	@POST
 	@Path("/")
@@ -56,5 +62,36 @@ public class PatientService {
 	public List<TestResult> findTestResultsByPatientId(@PathParam("id") Integer patientId) {
 		List<TestResult> testResults = trdao.findTestResultsByPatientId(patientId);
 		return testResults;
+	}
+	
+	@GET
+	@Path("/{id}/medications")
+	@Consumes("application/json")
+	@Produces("application/json")
+	public List<Medication> findMedicationsByPatientId(@PathParam("id") Integer patientId) {
+		List<Medication> medsList = meddao.findMedicationsByPatientId(patientId);
+		return medsList;
+	}
+	
+	@GET
+	@Path("/{id}/contactInfoList")
+	@Consumes("application/json")
+	@Produces("application/json")
+	public List<ContactInfo> findContactInfoListByPatientId(@PathParam("id") Integer patientId) {
+		System.out.println("==============================");
+		System.out.println("contact Info dao says hello");
+		List<ContactInfo> contactInfoList = contactInfoDao.findContactInfoListByUserId(patientId);
+		return contactInfoList;
+	}
+	
+	@PUT
+	@Path("/{id}/contactInfoList")
+	@Consumes("application/json")
+	@Produces("application/json")
+	public void updateContactInfoList(@PathParam("id") Integer patientId, List<ContactInfo> contactInfoList) {
+		System.out.println("==============================");
+		System.out.println("update contact Info List in Patient Service says hello");
+		System.out.println(contactInfoList.size());
+		contactInfoDao.updateContactInfoByPatientId(patientId, contactInfoList);
 	}
 }

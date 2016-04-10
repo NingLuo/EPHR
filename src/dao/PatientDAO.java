@@ -26,5 +26,4 @@ public class PatientDAO {
 		em.merge(p);
 		em.getTransaction().commit();
 	}
-
 }

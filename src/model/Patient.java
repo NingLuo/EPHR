@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -42,7 +43,8 @@ public class Patient extends User implements Serializable{
 	@OneToMany(mappedBy="patient")
 	private List<ClinicalSummary> clinicalSummaries;
 	
-	@OneToMany(mappedBy="patient")
+	@OneToMany(mappedBy="patient", cascade = CascadeType.ALL, orphanRemoval=true)
+	@JsonIgnore 
 	private List<ContactInfo> contactInfoList;
 	
 	@OneToMany(mappedBy="patient")
@@ -53,6 +55,7 @@ public class Patient extends User implements Serializable{
 	private List<Connection> connections;
 	
 	@OneToMany(mappedBy="patient")
+	@JsonIgnore
 	private List<Medication> medications;
 	
 	public Patient() {

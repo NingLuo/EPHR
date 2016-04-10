@@ -21,6 +21,16 @@
 				controller:"ProfileCtrl",
 				controllerAs: "model"
 			})
+			.when("/demographic", {
+				templateUrl:"views/profile/demographic.view.html",
+				controller:"DemographicCtrl",
+				controllerAs: "model"
+			})
+			.when("/contactInfo", {
+				templateUrl:"views/profile/contactInfo.view.html",
+				controller:"ContactInfoCtrl",
+				controllerAs: "model"
+			})
 			.when("/clinicalSummaries", {
 				templateUrl:"views/summary/clinicalSummaries.view.html",
 				controller:"ClinicalSummariesCtrl",
@@ -35,10 +45,14 @@
 				controllerAs: "model"
 			})
 			.when("/bloodTest", {
-				templateUrl:"views/testResult/bloodTest.view.html"
+				templateUrl:"views/testResult/bloodTest.view.html",
+				controller:"BloodTestCtrl",
+				controllerAs: "model"
 			})
 			.when("/medication", {
-				templateUrl:"views/medication/medication.view.html"
+				templateUrl:"views/medication/medication.view.html",
+				controller:"MedicationCtrl",
+				controllerAs: "model"
 			})
 			.when("/provider/:providerName",{
 				templateUrl:"views/provider/provider.view.html",

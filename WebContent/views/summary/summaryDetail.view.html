@@ -1,54 +1,60 @@
 <h2>Clinical Summary</h2>
 <hr>
-<div>
-	<h5>Patient ID</h5>
-	<p>{{summaryDetail.patientId}}</p>
+<div class="row">
+	<div class="col-lg-3">
+		<h5>Care Team</h5>
+		<p>{{summaryDetail.careTeam}}</p>
+	</div>
+	<div class="col-lg-3">
+		<h5>Summary Date</h5>
+		<p>{{summaryDetail.summaryDate | date}}</p>
+	</div>
+	<div class="col-lg-3">
+		<h5>Start Time</h5>
+		<p>{{summaryDetail.startTime | date}}</p>
+	</div>
+	<div class="col-lg-3">
+		<h5>End Time</h5>
+		<p>{{summaryDetail.endTime | date}}</p>
+	</div>
 </div>
-<div>
-	<h5>Height</h5>
-	<p>{{summaryDetail.height}}</p>
+<div class="row">
+	<div class="col-lg-3">
+		<h5>Height</h5>
+		<p>{{summaryDetail.height}}</p>
+	</div>
+	<div class="col-lg-3">
+		<h5>Weight</h5>
+		<p>{{summaryDetail.weight}}</p>
+	</div>
+	<div class="col-lg-3">
+		<h5>BMI</h5>
+		<p>{{summaryDetail.bmi}}</p>
+	</div>
 </div>
-<div>
-	<h5>Weight</h5>
-	<p>{{summaryDetail.weight}}</p>
-</div>
-<div>
-	<h5>BMI</h5>
-	<p>{{summaryDetail.bmi}}</p>
-</div>
-<div>
-	<h5>Pulse</h5>
-	<p>{{summaryDetail.pulse}}</p>
-</div>
-<div>
-	<h5>Blood Pressure</h5>
-	<p>{{summaryDetail.bloodPressure}}</p>
-</div>
-<div>
+<div class="row">
+	<div class="col-lg-3">
+		<h5>Pulse</h5>
+		<p>{{summaryDetail.pulse}}</p>
+	</div>
+	<div class="col-lg-3">
+		<h5>Blood Pressure</h5>
+		<p>{{summaryDetail.bloodPressure}}</p>
+	</div>
+	<div class="col-lg-3">
+		<h5>Referral</h5>
+		<p>{{summaryDetail.referral}}</p>
+	</div>
+	<div class="col-lg-3">
 	<h5>Tobacco History</h5>
 	<p>{{summaryDetail.tabaccoHistory}}</p>
 </div>
+</div>
+
 <div>
 	<h5>Instruction</h5>
 	<p>{{summaryDetail.instruction}}</p>
 </div>
-<div>
-	<h5>Care Team</h5>
-	<p>{{summaryDetail.careTeam}}</p>
-</div>
-<div>
-	<h5>Referral</h5>
-	<p>{{summaryDetail.referral}}</p>
-</div>
-<div>
-	<h5>Summary Date</h5>
-	<p>{{summaryDetail.summaryDate | date}}</p>
-</div>
-<div>
-	<h5>Start Time</h5>
-	<p>{{summaryDetail.startTime | date}}</p>
-</div>
-<div>
-	<h5>End Time</h5>
-	<p>{{summaryDetail.endTime | date}}</p>
-</div>
+
+
+

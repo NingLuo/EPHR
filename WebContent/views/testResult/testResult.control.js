@@ -26,9 +26,9 @@
 		}
 		init();
 		
-		function openDetail(summary) {
-			$rootScope.summaryDetail = summary;
-			$location.url("/summary");
+		function openDetail(test) {
+			$rootScope.testDetail = test;
+			$location.url("bloodTest");
 		}
 	}	
 })();

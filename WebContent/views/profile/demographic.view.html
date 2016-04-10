@@ -1,0 +1,33 @@
+<h1>Profile</h1>
+<form>
+	<div class="form-group">
+		<label for="patientName">Patient Name</label>
+		<input ng-model="model.user.patientName" class="form-control" type="text" id="patientName">
+	</div>
+	<div class="form-group">
+		<label for="dob">Date of Birth</label>
+		<input ng-model="model.user.dob" class="form-control" type="date" id="dob">
+	</div>
+	<div class="form-group">
+		<label for="gender">Gender</label>
+		<input ng-model="model.user.gender" class="form-control" type="text" id="gender">
+	</div>
+	<div class="form-group">
+		<label for="ethnicity">Ethnicity</label>
+		<input ng-model="model.user.ethnicity" class="form-control" type="text" id="ethnicity">
+	</div>
+	<div class="form-group">
+		<label for="address">Address</label>
+		<input ng-model="model.user.address" class="form-control" type="text" id="address">
+	</div>
+	<div class="form-group">
+		<label for="healthPlan">Health Plan</label>
+		<input ng-model="model.user.healthPlan" class="form-control" type="text" id="healthPlan">
+	</div>
+	<div class="form-group">
+		<label for="language">Language</label>
+		<input ng-model="model.user.language" class="form-control" type="text" id="language">
+	</div>
+	<button ng-click="model.update()" class="btn btn-success btn-block">Update</button>
+</form>
+

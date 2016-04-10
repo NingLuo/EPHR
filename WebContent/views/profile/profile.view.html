@@ -1,32 +1,54 @@
-<h1>Profile</h1>
-<form>
-	<div class="form-group">
-		<label for="patientName">Patient Name</label>
-		<input ng-model="model.user.patientName" class="form-control" type="text" id="patientName">
+<h3>Demographic</h3>
+<hr>
+<div class="row">
+	<div class="col-lg-3">
+		<h5>Patient Name</h5>
+		<p>{{model.currentUser.patientName}}</p>
 	</div>
-	<div class="form-group">
-		<label for="dob">Date of Birth</label>
-		<input ng-model="model.user.dob" class="form-control" type="date" id="dob">
+	<div class="col-lg-3">
+		<h5>Date of Birth</h5>
+		<p>{{model.currentUser.dob | date}}</p>
 	</div>
-	<div class="form-group">
-		<label for="gender">Gender</label>
-		<input ng-model="model.user.gender" class="form-control" type="text" id="gender">
+	<div class="col-lg-3">
+		<h5>Gender</h5>
+		<p>{{model.currentUser.gender}}</p>
 	</div>
-	<div class="form-group">
-		<label for="ethnicity">Ethnicity</label>
-		<input ng-model="model.user.ethnicity" class="form-control" type="text" id="ethnicity">
+	<div class="col-lg-3">
+		<h5 >Ethnicity</h5>
+		<p>{{model.currentUser.ethnicity}}</p>
 	</div>
-	<div class="form-group">
-		<label for="address">Address</label>
-		<input ng-model="model.user.address" class="form-control" type="text" id="address">
+</div>
+
+<div class="row">
+	<div class="col-lg-3">
+		<h5>Health Plan</h5>
+		<p>{{model.currentUser.healthPlan}}</p>
 	</div>
-	<div class="form-group">
-		<label for="healthPlan">Health Plan</label>
-		<input ng-model="model.user.healthPlan" class="form-control" type="text" id="healthPlan">
+	<div class="col-lg-3">
+		<h5>Language</h5>
+		<p>{{model.currentUser.language}}</p>
 	</div>
-	<div class="form-group">
-		<label for="language">Language</label>
-		<input ng-model="model.user.language" class="form-control" type="text" id="language">
+	<div class="col-lg-3">
+		<h5>Address</h5>
+		<p>{{model.currentUser.address}}</p>
 	</div>
-	<button ng-click="model.update()" class="btn btn-success btn-block">Update</button>
-</form>
+</div>
+
+<br>
+<a href="#/demographic" class="btn btn-success pull-right">Update Demographic</a>
+<br>
+
+<h3>Contact Information</h3>
+<hr>
+<div class="row" ng-repeat="contactInfo in model.contactInfoList">
+	<div class="col-lg-6">
+		<h5>Phone</h5>
+		<p>{{contactInfo.phone}}</p>
+	</div>
+	<div class="col-lg-6">
+		<h5>Email</h5>
+		<p>{{contactInfo.email}}</p>
+	</div>
+</div>
+<br>
+<a href="#/contactInfo" class="btn btn-success pull-right">Update Contact Info</a>

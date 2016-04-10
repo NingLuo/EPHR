@@ -3,6 +3,8 @@ package model;
 import java.util.Date;
 import javax.persistence.*;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
+
 @Entity
 @Table(name="Medication")
 public class Medication {
@@ -25,6 +27,7 @@ public class Medication {
 	
 	@ManyToOne(fetch=FetchType.EAGER)
 	@JoinColumn(name="patientId")
+	@JsonIgnore
 	private Patient patient;
 	
 	@ManyToOne(fetch=FetchType.EAGER)
