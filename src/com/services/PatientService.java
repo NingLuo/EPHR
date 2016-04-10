@@ -83,4 +83,17 @@ public class PatientService {
 		List<ContactInfo> contactInfoList = contactInfoDao.findContactInfoListByUserId(patientId);
 		return contactInfoList;
 	}
+	
+	@PUT
+	@Path("/{id}/contactInfoList")
+	@Consumes("application/json")
+	@Produces("application/json")
+	public void updateContactInfoList(@PathParam("id") Integer patientId, List<ContactInfo> contactInfoList) {
+//		Patient p = new Patient();
+//		p = dao.findPatientByPatientId(patientId);
+//		p.setContactInfoList(contactInfoList);
+		System.out.println("==============================");
+		System.out.println("update contact Info List in Patient Service says hello");
+		contactInfoDao.updateContactInfoByPatientId(patientId, contactInfoList);
+	}
 }

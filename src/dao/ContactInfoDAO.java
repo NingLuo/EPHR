@@ -29,4 +29,21 @@ public class ContactInfoDAO {
 		em.getTransaction().commit();
 		return contactInfoList;
 	}
+	
+	public void updateContactInfoByPatientId(Integer patientId, List<ContactInfo> contactInfoList) {
+		em.getTransaction().begin();
+		Patient p = new Patient();
+		p = em.find(Patient.class, patientId);
+		p.setContactInfoList(contactInfoList);
+		em.merge(p);
+		em.getTransaction().commit();
+	}
+	
+//	public Patient findPatientByPatientId(Integer patientId) {
+//		em.getTransaction().begin();
+//		Patient p = new Patient();
+//		p = em.find(Patient.class, patientId);
+//		em.getTransaction().commit();
+//		return p;
+//	}
 }
