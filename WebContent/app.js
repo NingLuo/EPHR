@@ -21,6 +21,11 @@
 				controller:"ProfileCtrl",
 				controllerAs: "model"
 			})
+			.when("/demographic", {
+				templateUrl:"views/profile/demographic.view.html",
+				controller:"DemographicCtrl",
+				controllerAs: "model"
+			})
 			.when("/clinicalSummaries", {
 				templateUrl:"views/summary/clinicalSummaries.view.html",
 				controller:"ClinicalSummariesCtrl",
