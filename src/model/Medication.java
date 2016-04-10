@@ -32,6 +32,7 @@ public class Medication {
 	
 	@ManyToOne(fetch=FetchType.EAGER)
 	@JoinColumn(name="providerId")
+	@JsonIgnore
 	private Provider provider;
 	
 

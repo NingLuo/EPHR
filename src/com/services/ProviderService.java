@@ -1,5 +1,7 @@
 package com.services;
 
+import java.util.List;
+
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -11,7 +13,7 @@ import javax.ws.rs.QueryParam;
 
 import dao.PatientDAO;
 import dao.ProviderDAO;
-import model.Patient;
+import model.Medication;
 import model.User;
 import model.Provider;
 
@@ -30,16 +32,23 @@ public class ProviderService {
 	}
 	
 	@GET
-	@Path("/home")
+	@Path("/{providerId}/medication")
 	@Consumes("application/json")
-	public String test(){
-		return "home";
+	@Produces("application/json")
+	public List<Medication> getMedication(@PathParam("providerId") Integer providerId){
+		List<Medication> meds = dao.getMedication(providerId);
+		return meds;
 	}
 	
-	@GET
-	@Path("/Name")
-	public String res(){
-		return "NOOO!";
+	@POST
+	@Path("/medication")
+	@Consumes("application/json")
+	@Produces("application/json")
+	public String prescribe(Medication med){
+		dao.prescribe(med);
+		return "Medication Inserted";
+				
 	}
+	
 		
 }

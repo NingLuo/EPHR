@@ -9,6 +9,8 @@ import javax.persistence.Enumerated;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
+
 @Entity
 @Table(name="Provider")
 public class Provider extends User {
@@ -30,6 +32,7 @@ public class Provider extends User {
 	private List<Connection> connections;
 	
 	@OneToMany(mappedBy="provider")
+	@JsonIgnore
 	private List<Medication> medications;
 
 	public Provider(String name, Specialty specialty, Gender gender, List<Connection> connections,
