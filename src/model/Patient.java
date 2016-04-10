@@ -53,6 +53,7 @@ public class Patient extends User implements Serializable{
 	private List<Connection> connections;
 	
 	@OneToMany(mappedBy="patient")
+	@JsonIgnore
 	private List<Medication> medications;
 	
 	public Patient() {

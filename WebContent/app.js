@@ -40,7 +40,9 @@
 				controllerAs: "model"
 			})
 			.when("/medication", {
-				templateUrl:"views/medication/medication.view.html"
+				templateUrl:"views/medication/medication.view.html",
+				controller:"MedicationCtrl",
+				controllerAs: "model"
 			})
 			.otherwise({
 				redirectTo: "/"
