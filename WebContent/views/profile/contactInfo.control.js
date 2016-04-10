@@ -31,7 +31,7 @@
 			.put("http://localhost:8080/EPHR/rest/patient/" + userId + "/contactInfoList", vm.contactInfoList)
 			.then(
 				function(response) {
-					console.log("Update Success");
+					console.log(response.data);
 					$location.url("/profile");
 				},
 				function(err) {
