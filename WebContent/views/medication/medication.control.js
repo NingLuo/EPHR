@@ -24,10 +24,5 @@
 			);
 		}
 		init();
-		
-//		function openDetail(test) {
-//			$rootScope.testDetail = test;
-//			$location.url("bloodTest");
-//		}
 	}
 })();
