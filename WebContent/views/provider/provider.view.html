@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div class="page-header">
+	<h2>{{model.provider.name}}</h2>
+</div>
+<div class="row">
+		<h4>Doctor Name: {{model.provider.name}}</h4>
+	<div class="col-md-4">	
+		<h4>Specialty: {{model.provider.specialty}}</h4></div>
+		<div class="col-md-4">
+		<h4>gender: {{model.provider.gender}}</h4>
+	</div>
+</div>
+
+<h2 class="sub-header">Prescriptions</h2>
+
+<div class="table-responsive">
+	<table class="table table-striped table-hover">
+		<thead>
+			<tr>
+				<th>Drug Name</th>
+				<th>Prescribe to</th>
+				<th>Pharmacy</th>
+				<th>Quantity</th>
+				<th>Prescribed Date</th>
+				<th>&nbsp</th>
+			</tr>
+			<tr>
+				<td><input placeholder="Drug Name"    ng-model="model.medication.name" class="form-control" type="text"></td>
+				<td><input placeholder="Patient Name" ng-model="model.medication.patient" class="form-control" type="text"></td>
+				<td><input placeholder="Pharmacy" 	  ng-model="model.medication.pharmacy" class="form-control" type="text"></td>
+				<td><input placeholder="Quantity" 	  ng-model="model.medication.quantity" class="form-control" type="text"></td>
+				<td><input placeholder="Prescribed Date" ng-model="model.medication.prescribedDate" class="form-control" type="text"></td>
+				<td><a href="" class="btn" ng-click="prescribe(model.medication)"><scan class="glyphicon glyphicon-plus"></scan></a></td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr np-repeat = "med in meds">
+				<td>{{med.name}}</td>
+				<td>{{med.patient}}</td>
+				<td>{{med.pharmacy}}</td>
+				<td>{{med.quantity}}</td>
+				<td>{{med.prescribedDate}}</td>
+				<td>&nbsp</td>
+				</tr>
+		</tbody>
+	</table>
+</div>
+</body>
+</html>

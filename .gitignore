@@ -4,7 +4,8 @@
 *.ear
 *.class
 Hello.jsp
-
+web.xml
+persistence.xml
 # eclipse specific git ignore
 *.pydevproject
 .project
