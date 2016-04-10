@@ -54,7 +54,7 @@
 				controller:"MedicationCtrl",
 				controllerAs: "model"
 			})
-			.when("/provider/:providerName",{
+			.when("/provider",{
 				templateUrl:"views/provider/provider.view.html",
 				controller:"providerController",
 				controllerAs:"model"
