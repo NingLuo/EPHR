@@ -24,6 +24,8 @@ public class ContactInfoDAO {
 		p = em.find(Patient.class, patientId);
 		p.getContactInfoList().size();
 		List<ContactInfo> contactInfoList = p.getContactInfoList();
+		System.out.println("++++++++++++++++++++++++++++++++++++++++++");
+		System.out.println(contactInfoList.size());
 		em.getTransaction().commit();
 		return contactInfoList;
 	}
