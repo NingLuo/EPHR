@@ -27,7 +27,7 @@
             <a href="#/medication">Medications</a>
         </li>
         <li>
-        	<a href="#/provider">Provider</a>
+        	<a href="#/provider" ng-if="currentUser.role==1">Provider</a>
         </li>
         <li>
             <a href="" ng-click="model.logout()">Log Out</a>

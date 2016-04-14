@@ -33,9 +33,10 @@ public class PatientService {
 	@POST
 	@Path("/")
 	@Consumes("application/json")
-	public void createPatient(Patient patient) {
+	public Patient createPatient(Patient patient) {
 		System.out.println(patient);
 		dao.createPatient(patient);
+		return patient;
 	}
 	
 	@PUT

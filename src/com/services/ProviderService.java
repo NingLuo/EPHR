@@ -14,6 +14,7 @@ import javax.ws.rs.QueryParam;
 import dao.PatientDAO;
 import dao.ProviderDAO;
 import model.Medication;
+import model.Patient;
 import model.User;
 import model.Provider;
 
@@ -41,14 +42,19 @@ public class ProviderService {
 	}
 	
 	@POST
-	@Path("/medication")
+	@Path("/medication/{providerId}")
+	@Consumes("application/json")
+	public void prescribe(Medication med,@PathParam("providerId") Integer providerId){
+//		System.out.println("__prescribe____"+med.getProvider()+"_________");
+		dao.prescribe(med,providerId);	
+	}	
+	
+	@POST
+	@Path("/")
 	@Consumes("application/json")
 	@Produces("application/json")
-	public String prescribe(Medication med){
-		dao.prescribe(med);
-		return "Medication Inserted";
-				
-	}
-	
-		
+	public Provider createUser(Provider user){
+			Provider provider = (Provider)user;
+			return dao.createProvider(provider);
+		}
 }

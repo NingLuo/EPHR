@@ -19,12 +19,12 @@
 		<label for="roles" class="control-label">I'm a</label>
 		<div class="radio-inline" id="roles">
 			<label> 
-				<input type="radio" name="role" id="option1" value="patient" checked> 
+				<input ng-model="user.role" type="radio" name="role" id="option1" value="0" checked> 
 				Patient
 			</label>
 		</div>
 		<div class="radio-inline">
-			<label> <input type="radio" name="role" id="option2" value="provider"> 
+			<label> <input ng-model="user.role" type="radio" name="role" id="option2" value="1"> 
 			Provider
 			</label>
 		</div>

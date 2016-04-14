@@ -6,6 +6,14 @@ import javax.persistence.*;
 @Inheritance(strategy = InheritanceType.JOINED)
 @Table(name="User")
 public abstract class User {
+	public User(Integer id, String username, String password, Integer role) {
+		super();
+		this.id = id;
+		this.username = username;
+		this.password = password;
+		this.role = role;
+	}
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
@@ -16,15 +24,11 @@ public abstract class User {
 	@Column(name="password", nullable=false)
 	private String password;
 	
+	@Column(name="role",nullable=false)
+	private Integer role;
+	
 	public User() {
 		super();
-	}
-	
-	public User(Integer id, String username, String password) {
-		super();
-		this.id = id;
-		this.username = username;
-		this.password = password;
 	}
 	
 	public Integer getId() {
@@ -44,5 +48,13 @@ public abstract class User {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public Integer getRole() {
+		return role;
+	}
+
+	public void setRole(Integer role) {
+		this.role = role;
 	}
 }

@@ -10,17 +10,32 @@
 		vm.register = register;
 		
 		function register(user) {
-			$http
+			if(user.role == 0){
+				$http
 				.post("http://localhost:8080/EPHR/rest/patient", user)
 				.then(
 						function(response) {
-							$rootScope = response.data;
+							$rootScope.currentUser = response.data;
 							$location.url("/profile");
 						},
 						function(err) {
 							console.log(err);
 						}
 				);
+			}else{
+				$http
+				.post("http://localhost:8080/EPHR/rest/provider",user)
+				.then(
+						function(response) {
+							$rootScope.currentUser = response.data;
+							$location.url("/provider");
+						},
+						function(err) {
+							console.log(err);
+						}
+				);
+			}
+		
 		}
 	}
 })();

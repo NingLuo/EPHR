@@ -14,13 +14,13 @@ import org.codehaus.jackson.annotate.JsonIgnore;
 @Entity
 @Table(name="Provider")
 public class Provider extends User {
-	@Column(nullable=false)
+	@Column(name="name")
 	private String name;
 	
 //	@Column(name="providerId", unique=true, nullable=false)
 //	private String providerId;
 	
-	@Column(name="specialty", nullable=false)
+	@Column(name="specialty")
 	@Enumerated(EnumType.STRING)
 	private Specialty specialty;
 	

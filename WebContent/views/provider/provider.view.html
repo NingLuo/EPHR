@@ -31,23 +31,23 @@
 				<th>&nbsp</th>
 			</tr>
 			<tr>
-				<td><input placeholder="Drug Name"    ng-model="model.medication.name" class="form-control" type="text"></td>
+				<td><input placeholder="Drug Name"    ng-model="model.medication.medName" class="form-control" type="text"></td>
 				<td><input placeholder="Patient Name" ng-model="model.medication.patient" class="form-control" type="text"></td>
 				<td><input placeholder="Pharmacy" 	  ng-model="model.medication.pharmacy" class="form-control" type="text"></td>
-				<td><input placeholder="Quantity" 	  ng-model="model.medication.quantity" class="form-control" type="text"></td>
-				<td><input placeholder="Prescribed Date" ng-model="model.medication.prescribedDate" class="form-control" type="text"></td>
-				<td><a href="" class="btn" ng-click="prescribe(model.medication)"><scan class="glyphicon glyphicon-plus"></scan></a></td>
+				<td><input placeholder="Quantity" 	  ng-model="model.medication.quantity" class="form-control" type="int"></td>
+				<td><input type="date" placeholder="Prescribed Date" ng-model="model.medication.prescirbedDate" class="form-control" type="text"></td>
+				<td><a href="" class="btn" ng-click="model.prescribe(model.medication)"><scan class="glyphicon glyphicon-plus"></scan></a></td>
 			</tr>
 		</thead>
 		<tbody>
-			<tr np-repeat = "med in meds">
-				<td>{{med.name}}</td>
-				<td>{{med.patient}}</td>
+			<tr ng-repeat="med in model.meds">
+				<td>{{med.medName}}</td>
+				<td>Alice</td>
 				<td>{{med.pharmacy}}</td>
 				<td>{{med.quantity}}</td>
-				<td>{{med.prescribedDate}}</td>
+				<td>{{med.prescirbedDate|date}}</td>
 				<td>&nbsp</td>
-				</tr>
+			</tr>
 		</tbody>
 	</table>
 </div>

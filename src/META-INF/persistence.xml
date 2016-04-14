@@ -12,6 +12,8 @@
 		<class>model.Provider</class>
 		<class>model.TestResult</class>
 		<class>model.User</class>
+		<class>model.TestStatus</class>
+
 		<properties>
 			<property name="eclipselink.jdbc.password" value="admin" />
 			<property name="eclipselink.jdbc.user" value="root" />

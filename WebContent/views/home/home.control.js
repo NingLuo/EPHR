@@ -14,9 +14,12 @@
 				.get("http://localhost:8080/EPHR/rest/user/login?username=" + user.username + "&password=" + user.password)
 				.then(
 						function(response) {
-							console.log(response.data.username + " log in success!");
+							console.log(response.data.username + " log in success!",response.data);
 							$rootScope.currentUser = response.data;
+							if($rootScope.currentUser.role == 0)
 							$location.url("/profile");
+							else
+								$location.url("/provider");
 						},
 						function(err) {
 							console.log(err);
